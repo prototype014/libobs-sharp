@@ -222,11 +222,22 @@ namespace OBS.Utility
 			for (int mi = 0; mi < indices.Count; mi++)
 			{
 				string formatSpecifier = format.Substring(indices[mi], (mi + 1 < indices.Count ? indices[mi + 1] : format.Length) - indices[mi]);
-				if (!string.IsNullOrWhiteSpace(formatSpecifier))
-					formats.Add(formatSpecifier);
-			}
 
-			return formats.ToArray();
+#if FX35
+                if (!formatSpecifier.IsNullOrWhiteSpace())
+                {
+                    formats.Add(formatSpecifier);
+                }
+#else
+                if (!string.IsNullOrWhiteSpace(formatSpecifier))
+                {
+                    formats.Add(formatSpecifier);
+                }
+#endif
+
+            }
+
+            return formats.ToArray();
 		}
 
 		public class FormatSpecificationInfo
@@ -265,10 +276,20 @@ namespace OBS.Utility
 
 		public static FormatSpecificationInfo GetFormatSpecifierInfo(string specification)
 		{
-			if (string.IsNullOrWhiteSpace(specification))
-				return null;
 
-			FormatSpecificationInfo info = new FormatSpecificationInfo()
+#if FX35
+            if (specification.IsNullOrWhiteSpace())
+            {
+                return null;
+            }
+#else
+            if (string.IsNullOrWhiteSpace(specification))
+            {
+                return null;
+            }
+#endif
+
+            FormatSpecificationInfo info = new FormatSpecificationInfo()
 			{
 				type = '\0',
 				width = int.MinValue,
@@ -391,12 +412,24 @@ namespace OBS.Utility
 				info.precision = int.MinValue;
 			}
 
-			if (!string.IsNullOrWhiteSpace(precision))
+#if FX35
+            if (!precision.IsNullOrWhiteSpace())
+                info.precision = Convert.ToInt32(precision);
+#else
+            if (!string.IsNullOrWhiteSpace(precision))
 				info.precision = Convert.ToInt32(precision);
+#endif
+
+#if FX35
+            if (!width.IsNullOrWhiteSpace())
+                info.width = Convert.ToInt32(width);
+#else
 			if (!string.IsNullOrWhiteSpace(width))
 				info.width = Convert.ToInt32(width);
+#endif
 
-			return info;
+
+            return info;
 		}
 
 		public static string sprintf(string format, params object[] args)

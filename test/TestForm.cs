@@ -23,6 +23,10 @@ using OBS;
 using test.Objects;
 using test.Controls;
 
+#if FX35
+using OBS.Utility.Tuple;
+#endif
+
 namespace test
 {
 	public partial class TestForm
@@ -38,7 +42,7 @@ namespace test
 
 		private void TestForm_Load(object sender, EventArgs e)
 		{
-			if (Environment.Is64BitProcess)
+			if (FX35Helper.Is64BitProcess())
 				Text += " (64-bit)";
 			else
 				Text += " (32-bit)";

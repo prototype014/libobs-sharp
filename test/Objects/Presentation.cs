@@ -24,6 +24,10 @@ using OBS;
 
 using test.Utility;
 
+#if FX35
+using OBS.Utility.Tuple;
+#endif
+
 namespace test.Objects
 {
 	public sealed class Presentation : IDisposable
