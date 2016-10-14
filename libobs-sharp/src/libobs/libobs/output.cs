@@ -15,19 +15,33 @@
 	along with this program; if not, see <http://www.gnu.org/licenses/>.
 ***************************************************************************/
 
+using System;
+using System.Runtime.InteropServices;
+
 namespace OBS
 {
-	public static partial class libobs
+	using obs_output_t = IntPtr;
+
+    public static partial class libobs
 	{
 		/* ------------------------------------------------------------------------- */
 		/* Outputs */
 
 		//EXPORT const char *obs_output_get_display_name(const char *id);
+
 		//EXPORT obs_output_t *obs_output_create(const char *id, const char *name, obs_data_t *settings, obs_data_t *hotkey_data);
+
 		//EXPORT void obs_output_destroy(obs_output_t *output);
 		//EXPORT const char *obs_output_get_name(const obs_output_t *output);
-		//EXPORT bool obs_output_start(obs_output_t *output);
-		//EXPORT void obs_output_stop(obs_output_t *output);
+
+	    [DllImport(importLibrary, CallingConvention = importCall)]
+        [return: MarshalAs(UnmanagedType.I1)]
+        public static extern bool obs_output_start(ref obs_output_t output);
+
+        [DllImport(importLibrary, CallingConvention = importCall)]
+        [return: MarshalAs(UnmanagedType.I1)]
+        public static extern bool obs_output_stop(ref obs_output_t output);
+
 		//EXPORT void obs_output_set_delay(obs_output_t *output, uint32_t delay_sec, uint32_t flags);
 		//EXPORT uint32_t obs_output_get_delay(const obs_output_t *output);
 		//EXPORT uint32_t obs_output_get_active_delay(const obs_output_t *output);
@@ -62,7 +76,7 @@ namespace OBS
 		//EXPORT uint32_t obs_output_get_width(const obs_output_t *output);
 		//EXPORT uint32_t obs_output_get_height(const obs_output_t *output);
 		//EXPORT const char *obs_output_get_id(const obs_output_t *output);
-		
+
 		/* ------------------------------------------------------------------------- */
 		/* Functions used by outputs */
 

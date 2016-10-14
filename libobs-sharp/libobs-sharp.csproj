@@ -109,6 +109,7 @@
     <Compile Include="src\ObsScene.cs" />
     <Compile Include="src\ObsSceneItem.cs" />
     <Compile Include="src\ObsSource.cs" />
+    <Compile Include="src\ObsOutput.cs" />
     <Compile Include="src\Utility\FX35Helper.cs" />
     <Compile Include="src\Utility\Printf.cs" />
     <Compile Include="src\Utility\Tuple.cs" />
