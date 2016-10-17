@@ -104,6 +104,7 @@
     <Compile Include="src\ObsData.cs" />
     <Compile Include="src\ObsDataArray.cs" />
     <Compile Include="src\ObsDisplay.cs" />
+    <Compile Include="src\ObsEncoder.cs" />
     <Compile Include="src\ObsProperties.cs" />
     <Compile Include="src\ObsProperty.cs" />
     <Compile Include="src\ObsScene.cs" />
