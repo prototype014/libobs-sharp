@@ -56,30 +56,34 @@ namespace OBS
         [DllImport(importLibrary, CallingConvention = importCall)]
         public static extern void obs_output_addref(obs_output_t output);
 
-        //EXPORT void obs_output_set_delay(obs_output_t *output, uint32_t delay_sec, uint32_t flags);
-        //EXPORT uint32_t obs_output_get_delay(const obs_output_t *output);
-        //EXPORT uint32_t obs_output_get_active_delay(const obs_output_t *output);
-        //EXPORT void obs_output_force_stop(obs_output_t *output);
-        //EXPORT bool obs_output_active(const obs_output_t *output);
-        //EXPORT obs_data_t *obs_output_defaults(const char *id);
-        //EXPORT obs_properties_t *obs_get_output_properties(const char *id);
-        //EXPORT obs_properties_t *obs_output_properties(const obs_output_t *output);
-        //EXPORT void obs_output_update(obs_output_t *output, obs_data_t *settings);
-        //EXPORT bool obs_output_can_pause(const obs_output_t *output);
-        //EXPORT void obs_output_pause(obs_output_t *output);
-        //EXPORT obs_data_t *obs_output_get_settings(const obs_output_t *output);
-        //EXPORT signal_handler_t *obs_output_get_signal_handler(
-        //EXPORT proc_handler_t *obs_output_get_proc_handler(const obs_output_t *output);
-        //EXPORT void obs_output_set_video(obs_output_t *output, video_t *video);
-        //EXPORT void obs_output_set_media(obs_output_t *output, video_t *video, audio_t *audio);
-        //EXPORT video_t *obs_output_video(const obs_output_t *output);
-        //EXPORT audio_t *obs_output_audio(const obs_output_t *output);
-        //EXPORT void obs_output_set_mixer(obs_output_t *output, size_t mixer_idx);
-        //EXPORT size_t obs_output_get_mixer(const obs_output_t *output);
+		//EXPORT void obs_output_set_delay(obs_output_t *output, uint32_t delay_sec, uint32_t flags);
+		//EXPORT uint32_t obs_output_get_delay(const obs_output_t *output);
+		//EXPORT uint32_t obs_output_get_active_delay(const obs_output_t *output);
+		//EXPORT void obs_output_force_stop(obs_output_t *output);
+		//EXPORT bool obs_output_active(const obs_output_t *output);
+		//EXPORT obs_data_t *obs_output_defaults(const char *id);
+		//EXPORT obs_properties_t *obs_get_output_properties(const char *id);
+		//EXPORT obs_properties_t *obs_output_properties(const obs_output_t *output);
+		//EXPORT void obs_output_update(obs_output_t *output, obs_data_t *settings);
+
+		//EXPORT bool obs_output_can_pause(const obs_output_t *output);
+
+		[DllImport(importLibrary, CallingConvention = importCall)]
+		public static extern void obs_output_pause(obs_output_t output);
+
+		//EXPORT obs_data_t *obs_output_get_settings(const obs_output_t *output);
+		//EXPORT signal_handler_t *obs_output_get_signal_handler(
+		//EXPORT proc_handler_t *obs_output_get_proc_handler(const obs_output_t *output);
+		//EXPORT void obs_output_set_video(obs_output_t *output, video_t *video);
+		//EXPORT void obs_output_set_media(obs_output_t *output, video_t *video, audio_t *audio);
+		//EXPORT video_t *obs_output_video(const obs_output_t *output);
+		//EXPORT audio_t *obs_output_audio(const obs_output_t *output);
+		//EXPORT void obs_output_set_mixer(obs_output_t *output, size_t mixer_idx);
+		//EXPORT size_t obs_output_get_mixer(const obs_output_t *output);
 
 
 
-        [DllImport(importLibrary, CallingConvention = importCall)]
+		[DllImport(importLibrary, CallingConvention = importCall)]
         public static extern void obs_output_set_video_encoder(obs_output_t output, obs_encoder_t encoder);
 
         [DllImport(importLibrary, CallingConvention = importCall)]

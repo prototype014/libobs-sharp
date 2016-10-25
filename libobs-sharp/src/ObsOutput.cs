@@ -33,7 +33,25 @@ namespace OBS
             return libobs.obs_output_start(instance);
         }
 
-        public unsafe bool Stop()
+		public unsafe bool CanPause()
+		{
+			throw new NotImplementedException();
+//			libobs.obs_output_can_pause(instance);
+		}
+
+		public unsafe void Pause()
+		{
+			throw new NotImplementedException();
+//			libobs.obs_output_pause(instance);
+		}
+
+		public unsafe bool Resume()
+		{
+			throw new NotImplementedException();
+//			return libobs.obs_output_start(instance);
+		}
+
+		public unsafe bool Stop()
         {
             return libobs.obs_output_stop(instance);
         }
