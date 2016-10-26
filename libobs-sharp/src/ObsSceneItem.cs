@@ -218,6 +218,11 @@ namespace OBS
 			libobs.obs_sceneitem_set_bounds_alignment(instance, (uint)alignment);
 		}
 
+		public unsafe void SetCrop(libobs.obs_sceneitem_crop crop)
+		{
+			libobs.obs_sceneitem_set_crop(instance, out crop);
+		}
+
 		public unsafe void SetOrder(obs_order_movement direction)
 		{
 			libobs.obs_sceneitem_set_order(instance, direction);
