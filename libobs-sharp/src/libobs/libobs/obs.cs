@@ -25,8 +25,11 @@ namespace OBS
 	using obs_data_t = IntPtr;
 	using obs_source_t = IntPtr;
 	using profiler_name_store_t = IntPtr;
+    using audio_t = IntPtr;
+    using video_t = IntPtr;
+    using obs_service_t = IntPtr;
 
-	using size_t = UIntPtr;
+    using size_t = UIntPtr;
 	using uint32_t = UInt32;
 
 	public static partial class libobs
@@ -119,10 +122,13 @@ namespace OBS
 		[DllImport(importLibrary, CallingConvention = importCall)]
 		public static extern void obs_leave_graphics();
 
-		//EXPORT audio_t *obs_get_audio(void);
-		//EXPORT video_t *obs_get_video(void);
+	    [DllImport(importLibrary, CallingConvention = importCall)]
+	    public static extern audio_t obs_get_audio();
 
-		[DllImport(importLibrary, CallingConvention = importCall)]
+        [DllImport(importLibrary, CallingConvention = importCall)]
+        public static extern video_t obs_get_video();
+
+        [DllImport(importLibrary, CallingConvention = importCall)]
 		public static extern void obs_set_output_source(uint32_t channel, obs_source_t source);
 
 		[DllImport(importLibrary, CallingConvention = importCall)]
@@ -137,11 +143,13 @@ namespace OBS
 		public static extern obs_source_t obs_get_source_by_name(
 			[MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(UTF8StringMarshaler))] string name);
 
-		//EXPORT obs_output_t *obs_get_output_by_name(const char *name);
-		//EXPORT obs_encoder_t *obs_get_encoder_by_name(const char *name);
-		//EXPORT obs_service_t *obs_get_service_by_name(const char *name);
+        //EXPORT obs_output_t *obs_get_output_by_name(const char *name);
+        //EXPORT obs_encoder_t *obs_get_encoder_by_name(const char *name);
+        [DllImport(importLibrary, CallingConvention = importCall, CharSet = importCharSet)]
+        public static extern obs_service_t obs_get_service_by_name(
+            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(UTF8StringMarshaler))] string name);
 
-		[Obsolete("Deprecated")]
+        [Obsolete("Deprecated")]
 		[DllImport(importLibrary, CallingConvention = importCall)]
 		public static extern gs_effect_t obs_get_default_rect_effect();
 		

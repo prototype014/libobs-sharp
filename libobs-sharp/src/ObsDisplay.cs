@@ -18,6 +18,10 @@
 using System;
 using System.Collections.Generic;
 
+#if FX35
+using OBS.Utility.Tuple;
+#endif
+
 namespace OBS
 {
 	using delegateTuple = Tuple<libobs.draw_callback, IntPtr>;

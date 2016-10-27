@@ -107,7 +107,7 @@ namespace test
 
 			Items.Move(oldindex, newindex);
 			
-			Debug.WriteLine("{0} new index is {1}", item.Name, newindex);
+			Debug.WriteLine(String.Format("{0} new index is {1}", item.Name, newindex));
 			return newindex;
 		}
 	}

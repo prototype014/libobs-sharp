@@ -92,8 +92,8 @@ namespace test
 			catch (BadImageFormatException exp)
 			{
 				MessageBox.Show("Platform target mismatch: "
-								+ (Environment.Is64BitProcess
-									? "Loading 32-bit OBS with 64-bit executable is not supported."
+								+ (FX35Helper.Is64BitProcess()
+                                    ? "Loading 32-bit OBS with 64-bit executable is not supported."
 									: "Loading 64-bit OBS with 32-bit executable is not supported.")
 								+ "\n\n" + exp.Message,
 					"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

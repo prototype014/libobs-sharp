@@ -54,7 +54,17 @@ namespace OBS
 			return libobs.obs_reset_audio(ref ai);
 		}
 
-		public static libobs.obs_video_info GetVideoInfo()
+	    public static IntPtr GetVideo()
+	    {
+	        return libobs.obs_get_video();
+	    }
+
+        public static IntPtr GetAudio()
+        {
+            return libobs.obs_get_audio();
+        }
+
+        public static libobs.obs_video_info GetVideoInfo()
 		{
 			libobs.obs_video_info ovi = new libobs.obs_video_info();
 			bool ret = libobs.obs_get_video_info(ref ovi);

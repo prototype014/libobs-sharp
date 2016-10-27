@@ -100,7 +100,7 @@ namespace test
 
 			Filters.Move(oldindex, newindex);
 
-			Debug.WriteLine("{0} new index is {1}", filter.Name, newindex);
+			Debug.WriteLine(String.Format("{0} new index is {1}", filter.Name, newindex));
 			return newindex;
 		}
 	}
