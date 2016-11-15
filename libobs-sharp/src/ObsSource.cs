@@ -106,6 +106,13 @@ namespace OBS
 			get { return libobs.obs_source_get_id(instance); }
 		}
 
+		/// <summary> Sets audio sync offset in ms. </summary>
+		public Int64 AudioOffset
+		{
+			get { return libobs.obs_source_get_sync_offset(instance); }
+			set { libobs.obs_source_set_sync_offset(instance, value); }
+		}
+
 		public ObsSourceType Type
 		{
 			get { return (ObsSourceType)libobs.obs_source_get_type(instance); }

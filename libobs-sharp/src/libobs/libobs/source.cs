@@ -25,6 +25,7 @@ namespace OBS
 	using obs_source_t = IntPtr;
 
 	using uint32_t = UInt32;
+	using int64_t = Int64;
 
 	public static partial class libobs
 	{
@@ -123,8 +124,13 @@ namespace OBS
 		//EXPORT proc_handler_t *obs_source_get_proc_handler(const obs_source_t *source);
 		//EXPORT void obs_source_set_volume(obs_source_t *source, float volume);
 		//EXPORT float obs_source_get_volume(const obs_source_t *source);
-		//EXPORT void obs_source_set_sync_offset(obs_source_t *source, int64_t offset);
-		//EXPORT int64_t obs_source_get_sync_offset(const obs_source_t *source);
+
+		[DllImport(importLibrary, CallingConvention = importCall)]
+		public static extern void obs_source_set_sync_offset(obs_source_t source, int64_t offset);
+
+		[DllImport(importLibrary, CallingConvention = importCall)]
+		public static extern int64_t obs_source_get_sync_offset(obs_source_t source);
+
 		//EXPORT void obs_source_enum_active_sources(obs_source_t *source, obs_source_enum_proc_t enum_callback, void *param);
 		//EXPORT void obs_source_enum_active_tree(obs_source_t *source, obs_source_enum_proc_t enum_callback, void *param);
 		//EXPORT bool obs_source_active(const obs_source_t *source);
