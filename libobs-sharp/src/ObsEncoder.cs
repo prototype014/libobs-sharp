@@ -38,7 +38,7 @@ namespace OBS
             }
             else if (type == ObsEncoderType.Audio)
             {
-                instance = libobs.obs_audio_encoder_create(id, name, IntPtr.Zero, UIntPtr.Zero, IntPtr.Zero);
+                instance = libobs.obs_audio_encoder_create(id, name, settings.GetPointer(), UIntPtr.Zero, IntPtr.Zero);
 
                 if (instance == null)
                     throw new ApplicationException("obs_audio_encoder_create failed");
