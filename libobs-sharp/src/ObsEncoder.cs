@@ -62,7 +62,12 @@ namespace OBS
             libobs.obs_encoder_set_audio(instance, audio);
         }
 
-        public unsafe IntPtr GetPointer()
+		public unsafe void Update(ObsData settings)
+		{
+			libobs.obs_encoder_update(instance, settings.GetPointer());
+		}
+
+		public unsafe IntPtr GetPointer()
         {
             return instance;
         }

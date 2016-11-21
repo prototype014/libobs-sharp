@@ -56,7 +56,12 @@ namespace OBS
             return libobs.obs_output_stop(instance);
         }
 
-        public unsafe IntPtr GetPointer()
+		public unsafe void Update(ObsData settings)
+		{
+			libobs.obs_output_update(instance, settings.GetPointer());
+		}
+
+		public unsafe IntPtr GetPointer()
         {
             return instance;
         }

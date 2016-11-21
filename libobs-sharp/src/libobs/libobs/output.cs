@@ -64,7 +64,10 @@ namespace OBS
 		//EXPORT obs_data_t *obs_output_defaults(const char *id);
 		//EXPORT obs_properties_t *obs_get_output_properties(const char *id);
 		//EXPORT obs_properties_t *obs_output_properties(const obs_output_t *output);
-		//EXPORT void obs_output_update(obs_output_t *output, obs_data_t *settings);
+
+		[DllImport(importLibrary, CallingConvention = importCall)]
+		public static extern void obs_output_update(obs_output_t encoder, obs_data_t settings);
+
 		//EXPORT bool obs_output_can_pause(const obs_output_t *output);
 
 		[DllImport(importLibrary, CallingConvention = importCall)]
