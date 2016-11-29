@@ -47,8 +47,7 @@ namespace OBS
         public static extern bool obs_output_start(obs_output_t output);
 
         [DllImport(importLibrary, CallingConvention = importCall)]
-        [return: MarshalAs(UnmanagedType.I1)]
-        public static extern bool obs_output_stop(obs_output_t output);
+        public static extern void obs_output_stop(obs_output_t output);
 
         [DllImport(importLibrary, CallingConvention = importCall)]
         public static extern void obs_output_release(obs_output_t output);
@@ -60,7 +59,11 @@ namespace OBS
 		//EXPORT uint32_t obs_output_get_delay(const obs_output_t *output);
 		//EXPORT uint32_t obs_output_get_active_delay(const obs_output_t *output);
 		//EXPORT void obs_output_force_stop(obs_output_t *output);
-		//EXPORT bool obs_output_active(const obs_output_t *output);
+
+		[DllImport(importLibrary, CallingConvention = importCall)]
+		[return: MarshalAs(UnmanagedType.I1)]
+		public static extern bool obs_output_active(obs_output_t output);
+
 		//EXPORT obs_data_t *obs_output_defaults(const char *id);
 		//EXPORT obs_properties_t *obs_get_output_properties(const char *id);
 		//EXPORT obs_properties_t *obs_output_properties(const obs_output_t *output);

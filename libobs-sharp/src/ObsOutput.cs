@@ -33,6 +33,11 @@ namespace OBS
             return libobs.obs_output_start(instance);
         }
 
+		public unsafe void Stop()
+		{
+			libobs.obs_output_stop(instance);
+		}
+
 		public unsafe bool CanPause()
 		{
 			throw new NotImplementedException();
@@ -50,11 +55,6 @@ namespace OBS
 			throw new NotImplementedException();
 //			return libobs.obs_output_start(instance);
 		}
-
-		public unsafe bool Stop()
-        {
-            return libobs.obs_output_stop(instance);
-        }
 
 		public unsafe void Update(ObsData settings)
 		{
@@ -85,6 +85,11 @@ namespace OBS
         {
             libobs.obs_output_set_audio_encoder(instance, audioEncoder.GetPointer(), UIntPtr.Zero);
         }
+
+	    public unsafe bool Active
+	    {
+			get { return libobs.obs_output_active(instance); }
+	    }
     }
 
     public enum ObsOutputType : int
