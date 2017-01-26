@@ -48,7 +48,7 @@ namespace OBS
 			libobs.obs_volmeter_detach_source(instance);
 		}
 
-		public unsafe void AddCallBbck(libobs.obs_volmeter_updated_t callback)
+		public unsafe void AddCallBack(libobs.obs_volmeter_updated_t callback)
 		{
 			AddCallback(callback, IntPtr.Zero);
 		}
