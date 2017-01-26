@@ -91,6 +91,7 @@
     <Compile Include="src\libobs\libobs\scene.cs" />
     <Compile Include="src\libobs\libobs\sceneitem.cs" />
     <Compile Include="src\libobs\libobs\service.cs" />
+    <Compile Include="src\libobs\libobs\audio-controls.cs" />
     <Compile Include="src\libobs\libobs\source.cs" />
     <Compile Include="src\libobs\libobs\view.cs" />
     <Compile Include="src\libobs\medio-io\medio-io.cs" />
@@ -109,6 +110,7 @@
     <Compile Include="src\ObsProperty.cs" />
     <Compile Include="src\ObsScene.cs" />
     <Compile Include="src\ObsSceneItem.cs" />
+    <Compile Include="src\ObsVolMeter.cs" />
     <Compile Include="src\ObsSource.cs" />
     <Compile Include="src\ObsOutput.cs" />
     <Compile Include="src\Utility\FX35Helper.cs" />
