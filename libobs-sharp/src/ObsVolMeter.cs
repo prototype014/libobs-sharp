@@ -17,6 +17,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using OBS.Utility.Tuple;
 
 namespace OBS
@@ -58,9 +59,23 @@ namespace OBS
 			// store the delegate tuple to prevent delegate getting removed
 			// by garbage collector
 
+			// Currently only support one callback
+			if (delegateRefs.Any())
+			{
+				RemoveCallback();
+			}
+
 			delegateTuple tuple = new delegateTuple(callback, param);
 			delegateRefs.Add(tuple);
 			libobs.obs_volmeter_add_callback(instance, tuple.Item1, tuple.Item2);
+		}
+
+		public unsafe void RemoveCallback()
+		{
+			if (!delegateRefs.Any()) return;
+
+			delegateTuple tuple = delegateRefs.First();
+			libobs.obs_volmeter_remove_callback(instance, tuple.Item1, tuple.Item2);
 		}
 
 		public unsafe void Dispose()

@@ -44,7 +44,8 @@ namespace OBS
 		[DllImport(importLibrary, CallingConvention = importCall)]
 		public static extern void obs_volmeter_add_callback(obs_volmeter_t volmeter, obs_volmeter_updated_t callback, IntPtr param);
 
-//		EXPORT void obs_volmeter_remove_callback(obs_volmeter_t* volmeter, obs_volmeter_updated_t callback, void* param);
+		[DllImport(importLibrary, CallingConvention = importCall)]
+		public static extern void obs_volmeter_remove_callback(obs_volmeter_t volmeter, obs_volmeter_updated_t callback, IntPtr param);
 
 		public enum obs_fader_type : int
 		{
