@@ -81,6 +81,7 @@
     <Compile Include="src\libobs\libobs.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\libobs\libobs\audioformat.cs" />
     <Compile Include="src\libobs\libobs\data.cs" />
     <Compile Include="src\libobs\libobs\display.cs" />
     <Compile Include="src\libobs\libobs\encoder.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="src\libobs\libobs\service.cs" />
     <Compile Include="src\libobs\libobs\audio-controls.cs" />
     <Compile Include="src\libobs\libobs\source.cs" />
+    <Compile Include="src\libobs\libobs\videoformat.cs" />
     <Compile Include="src\libobs\libobs\view.cs" />
     <Compile Include="src\libobs\medio-io\medio-io.cs" />
     <Compile Include="src\Graphics\Vector2.cs" />

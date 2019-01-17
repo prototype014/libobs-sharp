@@ -1,4 +1,4 @@
-﻿namespace libobs.src.libobs.libobs
+﻿namespace OBS
 {
     public enum videoformat
     {
