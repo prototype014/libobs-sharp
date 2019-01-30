@@ -95,6 +95,7 @@
     <Compile Include="src\libobs\libobs\service.cs" />
     <Compile Include="src\libobs\libobs\audio-controls.cs" />
     <Compile Include="src\libobs\libobs\source.cs" />
+    <Compile Include="src\libobs\libobs\SourceType.cs" />
     <Compile Include="src\libobs\libobs\VideoDeviceParameters.cs" />
     <Compile Include="src\libobs\libobs\videoformat.cs" />
     <Compile Include="src\libobs\libobs\view.cs" />
