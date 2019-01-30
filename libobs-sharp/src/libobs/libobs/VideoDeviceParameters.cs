@@ -3,6 +3,10 @@
     public static class VideoDeviceParameters
     {
         public const string VIDEO_DEVICE_ID = "video_device_id";
+
+        /// <summary>
+        /// Determines if a preset or a custom resolution will be used.
+        /// </summary>
         public const string RESOLUTION_TYPE = "res_type";
         public const string RESOLUTION = "resolution";
         public const string FRAME_INTERVAL = "frame_interval";
@@ -17,5 +21,6 @@
         public const string COLOR_SPACE = "color_space";
         public const string COLOR_RANGE = "color_range";
         public const string DEACTIVATE_WHEN_NOT_SHOWING = "deactivate_when_not_showing";
+        public const string ACTIVATE = "activate";
     }
 }
