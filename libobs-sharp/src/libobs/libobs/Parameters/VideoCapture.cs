@@ -1,6 +1,6 @@
 ﻿namespace OBS
 {
-    public static class VideoDeviceParameters
+    public static class VideoCapture
     {
         public const string VIDEO_DEVICE_ID = "video_device_id";
 

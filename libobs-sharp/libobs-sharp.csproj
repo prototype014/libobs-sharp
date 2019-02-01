@@ -82,10 +82,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="src\libobs\libobs\audioformat.cs" />
+    <Compile Include="src\libobs\libobs\Parameters\Common.cs" />
     <Compile Include="src\libobs\libobs\data.cs" />
     <Compile Include="src\libobs\libobs\display.cs" />
     <Compile Include="src\libobs\libobs\encoder.cs" />
     <Compile Include="src\libobs\libobs\hotkey.cs" />
+    <Compile Include="src\libobs\libobs\Parameters\MediaSource.cs" />
     <Compile Include="src\libobs\libobs\obs.cs" />
     <Compile Include="src\libobs\libobs\output.cs" />
     <Compile Include="src\libobs\libobs\properties.cs" />
@@ -96,7 +98,7 @@
     <Compile Include="src\libobs\libobs\audio-controls.cs" />
     <Compile Include="src\libobs\libobs\source.cs" />
     <Compile Include="src\libobs\libobs\SourceType.cs" />
-    <Compile Include="src\libobs\libobs\VideoDeviceParameters.cs" />
+    <Compile Include="src\libobs\libobs\Parameters\VideoCapture.cs" />
     <Compile Include="src\libobs\libobs\videoformat.cs" />
     <Compile Include="src\libobs\libobs\view.cs" />
     <Compile Include="src\libobs\medio-io\medio-io.cs" />
@@ -123,6 +125,7 @@
     <Compile Include="src\Utility\Tuple.cs" />
     <Compile Include="src\Utility\va_list.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
