@@ -26,8 +26,7 @@ namespace OBS
 	public static partial class libobs
 	{
 		[UnmanagedFunctionPointer(importCall, CharSet = importCharSet)]
-		public delegate void obs_volmeter_updated_t(IntPtr data, float level, float mag,
-			float peak, float muted);
+		public delegate void obs_volmeter_updated_t(IntPtr data, float[] magnitude, float[] peak, float[] input_peak);
 
 		[DllImport(importLibrary, CallingConvention = importCall)]
 		public static extern obs_volmeter_t obs_volmeter_create(obs_fader_type fader);
@@ -47,11 +46,20 @@ namespace OBS
 		[DllImport(importLibrary, CallingConvention = importCall)]
 		public static extern void obs_volmeter_remove_callback(obs_volmeter_t volmeter, obs_volmeter_updated_t callback, IntPtr param);
 
+		[DllImport(importLibrary, CallingConvention = importCall)]
+		public static extern void obs_volmeter_set_peak_meter_type(obs_volmeter_t volmeter, obs_peak_meter_type peak_meter_type);
+
 		public enum obs_fader_type : int
 		{
 			OBS_FADER_CUBIC,
 			OBS_FADER_IEC,
 			OBS_FADER_LOG
+		};
+
+		public enum obs_peak_meter_type : int
+		{
+			SAMPLE_PEAK_METER,
+			TRUE_PEAK_METER
 		};
 	}
 }
