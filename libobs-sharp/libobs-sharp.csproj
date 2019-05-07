@@ -37,7 +37,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>..\..\build64\rundir\Debug\bin\64bit\</OutputPath>
+    <OutputPath>..\..\build\rundir\Debug\bin\64bit\</OutputPath>
     <DefineConstants>TRACE;DEBUG;FX35</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <DebugType>full</DebugType>
@@ -48,7 +48,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <OutputPath>..\..\build64\rundir\Release\bin\64bit\</OutputPath>
+    <OutputPath>..\..\build\rundir\Release\bin\64bit\</OutputPath>
     <DefineConstants>TRACE;FX35</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Optimize>true</Optimize>
